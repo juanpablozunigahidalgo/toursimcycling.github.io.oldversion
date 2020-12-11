@@ -265,6 +265,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             var speed = document.getElementById('Speed').value;
             var capacity = document.getElementById('Hours').value;
             var travelmoded = document.getElementById('mode').value;
+            var daycost = document.getElementById('budgetday').value;
+            var restingd = document.getElementById('resting').value;
             service.getDistanceMatrix({
                 origins: [origin],
                 destinations: [destination],
@@ -304,6 +306,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         distin = parseInt(dist);
                         totalhours = Math.round(distin/speed);
                         daysneeded = Math.round((distin/(capacity*speed)));
+                        daysneededb = daysneeded +parseInt(restingd);
+                        costs = daysneededb*daycost;
                         if (dist) {
                             resolve(dist);
                         } else {
@@ -311,7 +315,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         }
                         document.getElementById("demo").innerHTML = dist;
                         document.getElementById("rhours").innerHTML = totalhours;
-                        document.getElementById("dneeded").innerHTML = daysneeded;
+                        document.getElementById("dneeded").innerHTML = daysneededb;
+                        document.getElementById("ttcost").innerHTML = costs;
                     }
                 }
             });

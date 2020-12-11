@@ -55,8 +55,8 @@
 				<!-- Main -->
 					<div id="main">
 							<div class="inner">
-										<h1>Route & cost</h1>
-										<p>Overview distance,time and cost.</p>
+										<h1>Cost trip calculator</h1>
+										<p>Overview distance. Time required.</p>
 							</div>
 							<div class="inner">
 							 <div class="specificcalculator" style="padding-top: 2em";>
@@ -73,16 +73,11 @@
 											<input id="Speed" placeholder="Speed km/h" type="text">
 										<p>Estimated hours per day cycling</p>
 												<input id="Hours" placeholder="Your capacity to ride h/day " type="text">
-										<p>Resting days.</p>
-														<input id="resting" placeholder="Your resting days" type="text">
-										<p>Your budget per day. We recommend between 25-50 [usd/day]</p>
-														<input id="budgetday" placeholder="Daily budget" type="text">
 										<button onclick="distance()">calculate</button>
 										<div>
   										<b> Origin to Destination: </b><p id="demo"></p>
 											<b> Total riding hours: </b><p id="rhours"></p>
 											<b> Days Needed : </b><p id="dneeded"></p>
-											<b> Trip costs [usd] : </b><p id="ttcost"></p>
 										</div>
 										<section id="google-map">
         								<div id="google-container"></div>
