@@ -1,0 +1,511 @@
+<!DOCTYPE HTML>
+<!--
+	shit
+-->
+<html>
+	<head>
+		<title>Generic - Phantom by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<!--<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a>-->
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							li><a href="index.html">Home</a></li>
+							<li><a href="Routeandcost.html">Route & cost.</a></li>
+							<li><a href="bikecheck.html">Bike check.</a></li>
+							<li><a href="generic.html">Equipment check</a></li>
+							<li><a href="Preparation.html">Preparation</a></li>
+							<li><a href="elements.html">Nutrition</a></li>
+							<li><a href="elements.html">Knowledge</a></li>
+							<li><a href="elements.html">Experience blogs</a></li>
+							<li><a href="elements.html">Books</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Equipment Check.</h1>
+							<!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
+							<p>Trip lenght in days. </p>
+							<input id="triplenght" placeholder="Trip day(s) lenght" type="text">
+							<p>Camping.</p>
+							<select name="demo-category" id="camping">
+								<option value="1">1-Yes. I will camp in the route.</option>
+								<option value="0">2- No. I will not camp in the route.</option>
+							</select>
+							<p>Rain</p>
+							<select name="demo-category" id="rain">
+								<option value="1">1- Yes. It will rain in the route.</option>
+								<option value="0">2- No. It will not rain in the route.</option>
+							</select>
+							<p>Min temperature.</p>
+							<input id="mintemp" placeholder="Min temperature in the route." type="text">
+							<button onclick="equipment();equipment2();">Get equipment.</button>
+
+
+							<h2>Equipment stats</h2>
+								<div class="row">
+									<div class="column" style="background-color:#fff; width: 2%;">
+  								</div>
+  								<div class="column" style="background-color:#aaa; width: 28%;">
+    								<p> Weight </p>
+										<p id="weight"></p>
+										<p>[kg]</p>
+  								</div>
+  								<div class="column" style="background-color:#fff; width: 2%;">
+  								</div>
+									<div class="column" style="background-color:#bbb; width: 28%;">
+										<p> Volume </p>
+										<p id="volume"></p>
+										<p>[lt]</p>
+  								</div>
+								</div>
+						<!--camping tent equipment list here-->
+						<div>
+						<p id="campinghead"></p>
+						<!--camping tent equipment list here-->
+						<!--tent-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tentcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tentq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tenttw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tenttv"></p>
+								</div>
+							</div>
+							<!--matress-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="matrescd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="matresq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="matrestw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="matrestv"></p>
+								</div>
+							</div>
+							<!--sleepingbag-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="slepbcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="slepbq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="slepbtw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="slepbtv"></p>
+								</div>
+							</div>
+							<!--Pillow-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="pillocd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="pilloq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="pillotw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="pillotv"></p>
+								</div>
+							</div>
+							<!--headlamp-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="headcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="headq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="headtw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="headtv"></p>
+								</div>
+							</div>
+							<!--floorinsulator-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="floorinscd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="floorinsq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="floorinstw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="floorinstv"></p>
+								</div>
+							</div>
+							<!--pot-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="potcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="potq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="pottw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="pottv"></p>
+								</div>
+							</div>
+							<!--cup-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="cupcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="cupq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="cuptw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="cuptv"></p>
+								</div>
+							</div>
+							<!--utenzil-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="utensilcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="utensilq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="utensiltw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="utensiltv"></p>
+								</div>
+							</div>
+							<!--stove-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="stovecd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="stoveq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="stovetw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="stovetv"></p>
+								</div>
+							</div>
+							<!--canister-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="canistercd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="canisterq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="canistertw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="canistertv"></p>
+								</div>
+							</div>
+							<!--igniter-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="ignitercd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="igniterq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="ignitertw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="ignitertv"></p>
+								</div>
+							</div>
+							<!--petrol-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="petrolcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="petrolq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="petroltw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="petroltv"></p>
+								</div>
+							</div>
+						  <!--detergent-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="detergentcd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="detergentq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="detergenttw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="detergenttv"></p>
+								</div>
+							</div>
+							<!--dish cloth-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="dishccd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="dishcq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="dishctw"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									<p id="dishctv"></p>
+								</div>
+							</div>
+					 </div>
+					 <!--documents here-->
+					 <div>
+					 <p id="docuhead"></p>
+					 <!--documents-->
+							<div class="row">
+								<div class="column" style="background-color:#fff; width: 20%;">
+									 <p id="docucd"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									 <p id="docuq"></p>
+								</div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									 <p id="docutw"></p>
+							  </div>
+								<div class="column" style="background-color:#fff; width: 20%;">
+									 <p id="docutv"></p>
+								</div>
+							 </div>
+						 </div>
+						 <div>
+						 <!--electronics-->
+						 <p id="electronics"></p>
+  					 <!--phone-->
+  							<div class="row">
+  								<div class="column" style="background-color:#fff; width: 20%;">
+  									 <p id="phonecd"></p>
+  								</div>
+  								<div class="column" style="background-color:#fff; width: 20%;">
+  									 <p id="phoneq"></p>
+  								</div>
+  								<div class="column" style="background-color:#fff; width: 20%;">
+  									 <p id="phonetw"></p>
+  							  </div>
+  								<div class="column" style="background-color:#fff; width: 20%;">
+  									 <p id="phonetv"></p>
+  								</div>
+  							 </div>
+								 <!--charger-->
+								 <div class="row">
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="chargercd"></p>
+   								</div>
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="chargerq"></p>
+   								</div>
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="chargertw"></p>
+   							  </div>
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="chargertv"></p>
+   								</div>
+   							 </div>
+								 <!--powerbank-->
+								 <div class="row">
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="pbankcd"></p>
+   								</div>
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="pbankq"></p>
+   								</div>
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="pbanktw"></p>
+   							  </div>
+   								<div class="column" style="background-color:#fff; width: 20%;">
+   									 <p id="pbanktv"></p>
+   								</div>
+   							 </div>
+  						</div>
+							<!--healthe-->
+							<div>
+							<!--health shit here-->
+								<p id="health"></p>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lightfirstaidcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lightfirstaidq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lightfirstaidtw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lightfirstaidtv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sunccd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="suncq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sunctw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sunctv"></p>
+								 </div>
+								</div>
+							</div>
+						<div>
+							<p id="bodycare"></p>
+							<div class="row">
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="soapcd"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="soapq"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="soaptw"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="soaptv"></p>
+							 </div>
+							</div>
+							<div class="row">
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tbrushcd"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tbrushq"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tbrushtw"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tbrushtv"></p>
+							 </div>
+							</div>
+							<div class="row">
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tpastecd"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tpasteq"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tpastetw"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="tpastetv"></p>
+							 </div>
+							</div>
+
+
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>By cyclists. </h2>
+								<ul class="icons">
+									<!--<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>-->
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>-->
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+
+						</div>
+					</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/equipment.js"></script>
+	</body>
+</html>
