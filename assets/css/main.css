@@ -2144,7 +2144,7 @@ input, select, textarea {
 		-ms-appearance: none;
 		appearance: none;
 		background-color: transparent;
-		border: solid 1px #ffffff 	;
+		border: solid 1px #3333 	;
 		border-radius: 0;
 		color: black;
 		display: block;

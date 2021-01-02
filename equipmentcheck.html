@@ -58,18 +58,25 @@
 							<input id="triplenght" placeholder="Trip day(s) lenght" type="text">
 							<p>Camping.</p>
 							<select name="demo-category" id="camping">
+								<option value="-1">select</option>
 								<option value="1">1-Yes. I will camp in the route.</option>
 								<option value="0">2- No. I will not camp in the route.</option>
 							</select>
 							<p>Rain</p>
 							<select name="demo-category" id="rain">
+								<option value="-1">select</option>
 								<option value="1">1- Yes. It will rain in the route.</option>
 								<option value="0">2- No. It will not rain in the route.</option>
 							</select>
 							<p>Min temperature.</p>
 							<input id="mintemp" placeholder="Min temperature in the route." type="text">
-							<button onclick="equipment();equipment2();">Get equipment.</button>
+							<button onclick="equipment();equipment2();equipment3();equipment4();">Get equipment.</button>
 
+							<!-- distribution graph -->
+							<div>
+							<div id="chartContainer" style="height: 20%; width: 30%;"></div>
+							<div style="margin-top:15px;color:dimgrey;font-size:9px;">
+							</div>
 
 							<h2>Equipment stats</h2>
 								<div class="row">
@@ -387,40 +394,36 @@
    							 </div>
   						</div>
 							<!--healthe-->
-							<div>
-							<!--health shit here-->
-								<p id="health"></p>
-								<div class="row">
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="lightfirstaidcd"></p>
-								 </div>
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="lightfirstaidq"></p>
-								 </div>
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="lightfirstaidtw"></p>
-								 </div>
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="lightfirstaidtv"></p>
-								 </div>
-								</div>
-								<div class="row">
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="sunccd"></p>
-								 </div>
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="suncq"></p>
-								 </div>
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="sunctw"></p>
-								 </div>
-								 <div class="column" style="background-color:#fff; width: 20%;">
-										<p id="sunctv"></p>
-								 </div>
-								</div>
-							</div>
 						<div>
 							<p id="bodycare"></p>
+							<div class="row">
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="lightfirstaidcd"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="lightfirstaidq"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="lightfirstaidtw"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="lightfirstaidtv"></p>
+							 </div>
+							</div>
+							<div class="row">
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="sunccd"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="suncq"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="sunctw"></p>
+							 </div>
+							 <div class="column" style="background-color:#fff; width: 20%;">
+									<p id="sunctv"></p>
+							 </div>
+							</div>
 							<div class="row">
 							 <div class="column" style="background-color:#fff; width: 20%;">
 									<p id="soapcd"></p>
@@ -463,7 +466,364 @@
 									<p id="tpastetv"></p>
 							 </div>
 							</div>
-
+							<!--Bike stuff here-->
+							<div>
+							<!--Basic Bike stuff here-->
+								<p id="basicbike"></p>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="helmcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="helmq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="helmtw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="helmtv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="multitcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="multitq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="multittw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="multittv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="pumpcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="pumpq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="pumptw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="pumptv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sgooglecd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sgoogleq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sgoogletw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sgoogletv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="stubecd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="stubeq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="stubetw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="stubetv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="levercd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="leverq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="levertw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="levertv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tubefixcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tubefixq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tubefixtw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tubefixtv"></p>
+								 </div>
+								</div>
+							</div>
+							<div>
+								<p id="clothing"></p>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tshirtcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tshirtq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tshirttw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tshirttv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fleececd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fleeceq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fleecetw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fleecetv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwindjcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwindjq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwindjtw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwindjtv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="wpjackcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="wpjackq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="wpjacktw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="wpjacktv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tjackcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tjackq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tjacktw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="tjacktv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fllegscd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fllegsq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fllegstw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="fllegstv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="flsleevscd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="flsleevsq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="flsleevstw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="flsleevstv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwpantcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwpantq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwpanttw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="lwpanttv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="skicd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="skiq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="skitw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="skitv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shortcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shortq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shorttw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shorttv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="boxercd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="boxerq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="boxertw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="boxertv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="socketcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="socketq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sockettw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="sockettv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="glovecd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="gloveq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="glovetw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="glovetv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shoecd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shoeq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shoetw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="shoetv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="capcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="capq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="captw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="captv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="feetcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="feetq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="feettw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="feettv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="neckcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="neckq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="necktw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="necktv"></p>
+								 </div>
+								</div>
+								<div class="row">
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="towellcd"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="towellq"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="towelltw"></p>
+								 </div>
+								 <div class="column" style="background-color:#fff; width: 20%;">
+										<p id="towelltv"></p>
+								 </div>
+								</div>
+							</div>
 
 						<p></p>
 						<p></p>
