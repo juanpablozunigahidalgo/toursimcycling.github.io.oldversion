@@ -897,6 +897,6 @@ totalropaw=((tshirtq*tshirtw)+(fleeceq*fleecew)+(lwindjq*lwindjw)+(wpjackq*wpjac
 equipment4 = function () {
   volumenresume = Math.round((totalropav+totalbikerelatedv+totalelectronicsv+totalhealthbodyv2+totaldocumv+totalcampingv+totalhealthbodyv1), 3);
   weightresume = Math.round((totalropaw+totalbikerelatedw+totalelectronicsw+totalhealthbodyw2+totaldocumw+totalcampingw+totalhealthbodyw1), 3);
-  document.getElementById("weight").innerHTML = volumenresume;
-  document.getElementById("volume").innerHTML = weightresume;
+  document.getElementById("volume").innerHTML = volumenresume;
+  document.getElementById("weight").innerHTML = weightresume;
 };

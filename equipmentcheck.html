@@ -37,15 +37,13 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							li><a href="index.html">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="Routeandcost.html">Route & cost.</a></li>
 							<li><a href="bikecheck.html">Bike check.</a></li>
-							<li><a href="generic.html">Equipment check</a></li>
+							<li><a href="equipmentcheck.html">Equipment check</a></li>
 							<li><a href="Preparation.html">Preparation</a></li>
 							<li><a href="elements.html">Nutrition</a></li>
 							<li><a href="elements.html">Knowledge</a></li>
-							<li><a href="elements.html">Experience blogs</a></li>
-							<li><a href="elements.html">Books</a></li>
 						</ul>
 					</nav>
 
@@ -70,7 +68,7 @@
 							</select>
 							<p>Min temperature.</p>
 							<input id="mintemp" placeholder="Min temperature in the route." type="text">
-							<button onclick="equipment();equipment2();equipment3();equipment4();">Get equipment.</button>
+							<button onclick="equipment();equipment2();equipment3();equipment4();grapher()">Get equipment.</button>
 
 							<!-- distribution graph -->
 							<div>
@@ -95,6 +93,8 @@
 										<p>[lt]</p>
   								</div>
 								</div>
+								</div>
+
 						<!--camping tent equipment list here-->
 						<div>
 						<p id="campinghead"></p>
@@ -867,5 +867,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/equipment.js"></script>
+			<script src="assets/js/circle-chart.js"></script>
 	</body>
 </html>
