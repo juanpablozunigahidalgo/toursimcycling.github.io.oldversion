@@ -639,16 +639,16 @@ if (lwindjq > 0 ) {
 //water proof rain jacekt goretex shit.
 if  ( rain==1 && dayslength >0) {
   wpjackq=1;
-  document.getElementById("lwindjcd").innerHTML = "Waterproof jacket";
-  document.getElementById("lwindjq").innerHTML = wpjackq + " [unit]";
-  document.getElementById("lwindjtw").innerHTML = ((wpjackq*wpjackw)/1000) + " [kg]";
-  document.getElementById("lwindjtv").innerHTML = (wpjackq*wpjackv) + " [lt]";
+  document.getElementById("wpjackcd").innerHTML = "Waterproof jacket";
+  document.getElementById("wpjackq").innerHTML = wpjackq + " [unit]";
+  document.getElementById("wpjacktw").innerHTML = ((wpjackq*wpjackw)/1000) + " [kg]";
+  document.getElementById("wpjacktv").innerHTML = (wpjackq*wpjackv) + " [lt]";
 } else {
   wpjackq=0;
-  document.getElementById("lwindjcd").innerHTML = "";
-  document.getElementById("lwindjq").innerHTML = "";
-  document.getElementById("lwindjtw").innerHTML = "";
-  document.getElementById("lwindjtv").innerHTML = "";
+  document.getElementById("wpjackcd").innerHTML = "";
+  document.getElementById("wpjackq").innerHTML = "";
+  document.getElementById("wpjacktw").innerHTML = "";
+  document.getElementById("wpjacktv").innerHTML = "";
 };
 //thermal waterproof jacket tjack
 if  ( (tempmin < 0) && (dayslength > 0) ) {
